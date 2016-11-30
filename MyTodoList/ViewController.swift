@@ -18,6 +18,7 @@ class ViewController: UIViewController {
 
     todoList.addItem( item: itemTextField.text! )
     tableView.reloadData()
+    self.itemTextField?.resignFirstResponder()
   }
 
   override func viewDidLoad() {
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
 
     tableView.register( UITableViewCell.self, forCellReuseIdentifier: "Cell" )
     tableView.dataSource = todoList
+    tableView.delegate = self
   }
 
   override func didReceiveMemoryWarning() {
@@ -33,4 +35,11 @@ class ViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
 
+}
+
+extension ViewController: UITableViewDelegate {
+  // MARK: Methods of UITableView Delegate
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    self.itemTextField?.resignFirstResponder()
+  }
 }

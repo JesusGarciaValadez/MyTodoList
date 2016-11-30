@@ -11,7 +11,7 @@ import UIKit
 class TodoList: NSObject {
   var items: [ String ] = []
 
-  // Obtain a FileManager reference for save information to disk
+  // MARK: Obtain a FileManager reference for save information to disk
   private let fileURL: URL = {
     let fileManager = FileManager.default
     let documentDirectoryURLs = fileManager.urls( for: .documentDirectory, in: .userDomainMask ) as [ URL ]
@@ -22,7 +22,7 @@ class TodoList: NSObject {
     return documentDirectoryURL
   }()
 
-  // Load items from todolist.item file into the application
+  // MARK: Load items from todolist.item file into the application
   override init() {
     super.init()
 
@@ -54,6 +54,7 @@ class TodoList: NSObject {
   }
 }
 
+// MARK: Implements UITableViewDataSource Methods
 extension TodoList: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
@@ -68,7 +69,18 @@ extension TodoList: UITableViewDataSource {
     return cell
   }
 
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
+  // Make a row deletable
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    return true
+  }
+
+  // Delete a task selected and animate the row deleted
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    items.remove(at: indexPath.row)
+    saveItems()
+
+    tableView.beginUpdates()
+    tableView.deleteRows(at: [ indexPath ], with: UITableViewRowAnimation.middle)
+    tableView.endUpdates()
   }
 }
