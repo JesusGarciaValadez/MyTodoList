@@ -30,6 +30,10 @@ class DetailViewController: UIViewController {
     formatter.dateFormat = "dd/MM/yyyy HH:mm"
     return formatter.string(from: date)
   }
+  
+  @IBAction func addNotification(_ sender: UIBarButtonItem) {
+    
+  }
 
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
