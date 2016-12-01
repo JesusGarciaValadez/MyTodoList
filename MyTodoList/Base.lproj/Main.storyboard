@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-7l-c6e">
-                                <rect key="frame" x="0.0" y="64" width="375" height="333.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="334"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="36K-Jw-8dr">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
@@ -116,16 +116,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="i5P-Pd-C0L">
-                                        <rect key="frame" x="0.0" y="167" width="375" height="166.5"/>
+                                        <rect key="frame" x="0.0" y="167" width="375" height="167"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ba1-Ik-jcC">
-                                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="166.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="167"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sin fecha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ew-bF-5rC">
-                                                <rect key="frame" x="191.5" y="0.0" width="183.5" height="166.5"/>
+                                                <rect key="frame" x="191.5" y="0.0" width="183.5" height="167"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -135,13 +135,25 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.42054718872013919" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </stackView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Pq7-Qd-GgZ">
+                                <rect key="frame" x="0.0" y="398" width="375" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="KIk-4n-YwM"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="502306381.47830802">
+                                    <!--2016-12-01 17:33:01 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nIq-7l-c6e" firstAttribute="top" secondItem="MwK-vY-u5B" secondAttribute="bottom" id="GGZ-SY-3L8"/>
+                            <constraint firstItem="Pq7-Qd-GgZ" firstAttribute="leading" secondItem="cfq-Vs-miE" secondAttribute="leading" id="HLa-0d-NgY"/>
+                            <constraint firstAttribute="trailing" secondItem="Pq7-Qd-GgZ" secondAttribute="trailing" id="aGh-WG-Sgt"/>
                             <constraint firstAttribute="trailing" secondItem="nIq-7l-c6e" secondAttribute="trailing" id="bu3-Jm-aFy"/>
                             <constraint firstItem="nIq-7l-c6e" firstAttribute="height" secondItem="cfq-Vs-miE" secondAttribute="height" multiplier="0.5" id="cQQ-qs-RoG"/>
                             <constraint firstItem="nIq-7l-c6e" firstAttribute="leading" secondItem="cfq-Vs-miE" secondAttribute="leading" id="g6g-GA-bWm"/>
+                            <constraint firstItem="Pq7-Qd-GgZ" firstAttribute="top" secondItem="nIq-7l-c6e" secondAttribute="bottom" id="hnS-bs-FLT"/>
                         </constraints>
                     </view>
                     <connections>
