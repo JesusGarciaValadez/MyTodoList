@@ -17,8 +17,18 @@ class DetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    print( "\(item)" )
-    descriptionLabel.text = item!
+    print( "Item: \(item)" )
+    self.descriptionLabel.text = item!
+  }
+
+  @IBAction func dateSelected(_ sender: UIDatePicker) {
+    self.dateLabel.text = formatDate(date: sender.date)
+  }
+
+  func formatDate( date: Date ) -> String {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd/MM/yyyy HH:mm"
+    return formatter.string(from: date)
   }
 
   override func didReceiveMemoryWarning() {

@@ -143,6 +143,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="502306381.47830802">
                                     <!--2016-12-01 17:33:01 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateSelected:" destination="SYq-Qc-fVV" eventType="valueChanged" id="htg-Dw-Mow"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
