@@ -65,6 +65,10 @@ extension ViewController: UITableViewDelegate {
 
     self.selectedItem = self.todoList.getItem(index: indexPath.row)
     self.performSegue(withIdentifier: "showItem", sender: self)
+
+    //let detailViewController = DetailViewController()
+    //detailViewController.item = self.selectedItem
+    //self.navigationController?.pushViewController( detailViewController, animated: true)
   }
 
   // Obtain the DetailViewController as a destination and passing it the 
