@@ -29,6 +29,7 @@ class TodoList: NSObject {
     loadItems()
   }
 
+  // Add the task to the items array and save the items to disk
   func addItem( item: String ) {
     items.append( item )
 
@@ -52,14 +53,21 @@ class TodoList: NSObject {
       self.items = itemsArray
     }
   }
+
+  func getItem( index: Int ) -> String {
+    return items[ index ]
+  }
 }
 
 // MARK: Implements UITableViewDataSource Methods
 extension TodoList: UITableViewDataSource {
+  // Define the number of rows in each section
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return items.count
   }
 
+  // Define which cell are used for populate the UITableView and what information
+  // are showed
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
     let item = items[ indexPath.row ]
